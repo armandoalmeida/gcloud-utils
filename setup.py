@@ -10,12 +10,12 @@ with open(os.path.join(HERE, "README.md")) as fid:
 
 # This call to setup() does all the work
 setup(
-    name="simple-gcp-utils",
-    version="1.1.0",
+    name="simple-gcp",
+    version="1.0.0",
     description="Google Cloud Utilities for Python 3",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/armandoalmeida/gcloud-utils",
+    url="http://gitlab.ingaia.com.br/jose.almeida/chargebee-operations-api",
     author="Jose Armando de Almeida Neto",
     author_email="jose@armandoalmeida.com.br",
     license="MIT",
@@ -25,12 +25,12 @@ setup(
         "Programming Language :: Python :: 3.7",
     ],
     packages=["gcputils"],
-    include_package_data=True,
+    include_package_data=False,
     install_requires=["google-cloud-firestore", "google-cloud-datastore", "google-cloud-tasks", "google-cloud-storage",
                       "google-cloud-bigquery"],
     entry_points={
         "console_scripts": [
-            "simple-gcp-utils=gcputils.__main__:main",
+            "simple-gcp=gcputils.__main__:main",
         ]
     },
 )
