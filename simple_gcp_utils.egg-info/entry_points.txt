@@ -1,0 +1,3 @@
+[console_scripts]
+simple-gcp-utils = gcputils.__main__:main
+
