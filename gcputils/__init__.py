@@ -7,8 +7,8 @@ from gcputils.bigquery import BigQueryUtil
 from gcputils.project import ProjectReference
 from gcputils.schemas import SchemaLoader, SchemaReference
 
-__all__ = ['FireStoreUtil', 'DataStoreUtil', 'SchedulerUtil', 'QueueUtil', 'StorageUtil', 'BigQueryUtil',
-           'ProjectReference', 'SchemaLoader', 'SchemaReference']
-
 # Version of the package
-__version__ = "1.0.1"
+__version__ = "1.0.3"
+
+__all__ = ['FireStoreUtil', 'DataStoreUtil', 'SchedulerUtil', 'QueueUtil', 'StorageUtil', 'BigQueryUtil',
+           'ProjectReference', 'SchemaLoader', 'SchemaReference', '__version__']

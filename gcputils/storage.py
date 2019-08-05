@@ -16,7 +16,8 @@ class StorageUtil:
         for bucket in Storage.buckets():
             buckets += f'{bucket}\n'
 
-        strge = StorageUtil('bucket-name', 'all_buckets.txt').new_content(buckets)
+        project_def = ProjectDefinition('project_id', 'location')
+        strge = StorageUtil('bucket-name', 'all_buckets.txt', project=project_def).new_content(buckets)
         print(f'File content [{strge.file_name}]: {strge.get_content()}')
     """
 

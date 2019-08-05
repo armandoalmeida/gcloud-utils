@@ -16,7 +16,7 @@ class ProjectReferenceNotDefinedException(GenericException):
 
 
 class SchemaNotDefinedException(GenericException):
-    message = 'Define the bigquery schema using the method "set_schema".'
+    message = 'Define the bigquery schema.'
 
 
 class QueryIsNoneException(GenericException):

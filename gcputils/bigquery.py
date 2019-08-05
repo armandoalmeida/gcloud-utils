@@ -13,7 +13,7 @@ class BigQueryUtil:
         self.project = project if project else ProjectReference(project_id, location)
         self.dataset_id = dataset_id
         self.table_name = table_name
-        self.schema = schema
+        self._schema = schema
         self._dataset = None
         self._table = None
 
@@ -45,10 +45,17 @@ class BigQueryUtil:
 
         return self._table
 
-    def set_schema(self, schema):
-        self.schema = schema
+    @property
+    def schema(self):
+        if not self._schema and self.table:
+            # noinspection PyUnresolvedReferences
+            return self.table.schema
+        return self._schema
+
+    @schema.setter
+    def schema(self, schema):
+        self._schema = schema
         self._table = None
-        return self
 
     def check_table(self):
         if self.table is None:

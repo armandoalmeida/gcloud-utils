@@ -54,7 +54,7 @@ class FireStoreUtil:
     @staticmethod
     def delete_multi(docs):
         for doc in docs:
-            logging.info(u'Deleting doc {} => {}'.format(doc.id, doc.to_dict()))
+            logging.debug(u'Deleting doc {} => {}'.format(doc.id, doc.to_dict()))
             doc.reference.delete()
 
     def delete_collection(self, batch_size=10):
@@ -62,7 +62,7 @@ class FireStoreUtil:
         deleted = 0
 
         for doc in docs:
-            logging.info(u'Deleting doc {} => {}'.format(doc.id, doc.to_dict()))
+            logging.debug(u'Deleting doc {} => {}'.format(doc.id, doc.to_dict()))
             doc.reference.delete()
             deleted = deleted + 1
 
