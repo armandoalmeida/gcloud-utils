@@ -50,6 +50,8 @@ class BigQueryUtil:
         if not self._schema and self.table:
             # noinspection PyUnresolvedReferences
             return self.table.schema
+        if not self._schema and not self.table:
+            raise SchemaNotDefinedException()
         return self._schema
 
     @schema.setter
