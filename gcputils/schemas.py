@@ -4,7 +4,8 @@ import logging
 
 from typing import Dict, List
 from google.cloud import bigquery
-from gcputils import BigQueryUtil, ProjectReference
+from .bigquery import BigQueryUtil
+from .project import ProjectReference
 from google.cloud.bigquery.dataset import DatasetReference
 from google.cloud.bigquery.table import TableReference
 from google.cloud.bigquery.schema import SchemaField
