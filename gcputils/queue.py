@@ -39,7 +39,10 @@ class QueueUtil:
 
         self.client.create_task(self.queue_path, queue)
 
-        queue['app_engine_http_request'].pop('body')
+        # remove body to log
+        if 'body' in queue['app_engine_http_request']:
+            queue['app_engine_http_request'].pop('body')
+
         logging.info(f'Task enqeued: {queue}')
 
     def pause(self):
